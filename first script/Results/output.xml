@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.4 on win32)" generated="20190904 21:08:50.489" rpa="false">
+<suite id="s1" name="Amazon" source="C:\Users\wiler.antonio.junior\Documents\TrainingProjects\RobotFramework\development\robot-scripts\first script\tests\amazon.robot">
+<test id="s1-t1" name="User must sign in to check out">
+<kw name="Begin Web Test" library="Common">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>firefox</arg>
+</arguments>
+<msg timestamp="20190904 21:08:51.284" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20190904 21:08:51.282" endtime="20190904 21:09:04.493"></status>
+</kw>
+<status status="PASS" starttime="20190904 21:08:51.281" endtime="20190904 21:09:04.493"></status>
+</kw>
+<kw name="Search for Products" library="Amazon">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>http://www.amazon.com</arg>
+</arguments>
+<msg timestamp="20190904 21:09:04.495" level="INFO">Opening url 'http://www.amazon.com'</msg>
+<status status="PASS" starttime="20190904 21:09:04.494" endtime="20190904 21:09:09.797"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Your Amazon.com</arg>
+</arguments>
+<status status="PASS" starttime="20190904 21:09:09.798" endtime="20190904 21:09:10.424"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=twotabsearchtextbox</arg>
+<arg>Ferrari 458</arg>
+</arguments>
+<msg timestamp="20190904 21:09:10.425" level="INFO">Typing text 'Ferrari 458' into text field 'id=twotabsearchtextbox'.</msg>
+<status status="PASS" starttime="20190904 21:09:10.425" endtime="20190904 21:09:10.858"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>Go</arg>
+</arguments>
+<msg timestamp="20190904 21:09:10.859" level="INFO">Clicking button 'Go'.</msg>
+<status status="PASS" starttime="20190904 21:09:10.858" endtime="20190904 21:09:17.098"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>results for "Ferrari 458"</arg>
+</arguments>
+<status status="PASS" starttime="20190904 21:09:17.098" endtime="20190904 21:09:17.174"></status>
+</kw>
+<status status="PASS" starttime="20190904 21:09:04.494" endtime="20190904 21:09:17.174"></status>
+</kw>
+<kw name="Select Product from Search Results" library="Amazon">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=/html/body/div[1]/div[1]/div[1]/div[2]/div/span[3]/div[1]/div[1]/div/div/div/div[2]/div[3]/div/div[1]/h2/a</arg>
+</arguments>
+<msg timestamp="20190904 21:09:17.175" level="INFO">Clicking link 'xpath=/html/body/div[1]/div[1]/div[1]/div[2]/div/span[3]/div[1]/div[1]/div/div/div/div[2]/div[3]/div/div[1]/h2/a'.</msg>
+<status status="PASS" starttime="20190904 21:09:17.175" endtime="20190904 21:09:22.319"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Back to results</arg>
+</arguments>
+<status status="PASS" starttime="20190904 21:09:22.319" endtime="20190904 21:09:22.589"></status>
+</kw>
+<status status="PASS" starttime="20190904 21:09:17.175" endtime="20190904 21:09:22.589"></status>
+</kw>
+<kw name="Add Product to Cart" library="Amazon">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>id=add-to-cart-button</arg>
+</arguments>
+<msg timestamp="20190904 21:09:22.591" level="INFO">Clicking button 'id=add-to-cart-button'.</msg>
+<status status="PASS" starttime="20190904 21:09:22.590" endtime="20190904 21:09:26.286"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Added to Cart</arg>
+</arguments>
+<status status="PASS" starttime="20190904 21:09:26.288" endtime="20190904 21:09:26.387"></status>
+</kw>
+<status status="PASS" starttime="20190904 21:09:22.590" endtime="20190904 21:09:26.387"></status>
+</kw>
+<kw name="Begin Checkout" library="Amazon">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>id=hlb-ptc-btn-native</arg>
+</arguments>
+<msg timestamp="20190904 21:09:26.388" level="INFO">Clicking link 'id=hlb-ptc-btn-native'.</msg>
+<status status="PASS" starttime="20190904 21:09:26.388" endtime="20190904 21:09:26.699"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>continue</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190904 21:09:27.024" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-35.png"&gt;&lt;img src="selenium-screenshot-35.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20190904 21:09:26.826" endtime="20190904 21:09:27.025"></status>
+</kw>
+<msg timestamp="20190904 21:09:27.057" level="FAIL">Page should have contained element 'continue' but did not.</msg>
+<status status="FAIL" starttime="20190904 21:09:26.699" endtime="20190904 21:09:27.058"></status>
+</kw>
+<status status="FAIL" starttime="20190904 21:09:26.387" endtime="20190904 21:09:27.058"></status>
+</kw>
+<doc>This is some basic info about the test</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="FAIL" starttime="20190904 21:08:51.279" endtime="20190904 21:09:27.059" critical="yes">Page should have contained element 'continue' but did not.</status>
+</test>
+<doc>Amazon Script</doc>
+<status status="FAIL" starttime="20190904 21:08:50.495" endtime="20190904 21:09:27.065"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">Smoke</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Amazon">Amazon</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
